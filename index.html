@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pooja Rajbhar - Marketing Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAFAF8;--surface:#FFF;--text:#1A1A1A;--muted:#6B6B6B;--accent:#2D5A3D;--accent-light:#E8F0EA;--accent-warm:#C4956A;--border:#E8E6E1;--serif:'DM Serif Display',Georgia,serif;--sans:'Outfit',-apple-system,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7}
+nav{position:fixed;top:0;width:100%;background:rgba(250,250,248,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:100;padding:0 40px}
+nav .inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px}
+nav .logo{font-family:var(--serif);font-size:20px;color:var(--accent);text-decoration:none}
+nav .links{display:flex;gap:28px}
+nav .links a{text-decoration:none;color:var(--muted);font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .3s}
+nav .links a:hover{color:var(--accent)}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:space-between;gap:60px;padding:120px 40px 80px;max-width:1200px;margin:0 auto}
+.hero-content{max-width:700px}
+.hero-label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:6px 16px;border-radius:40px;margin-bottom:28px;opacity:0;animation:fadeUp .8s ease forwards .2s}
+.hero h1{font-family:var(--serif);font-size:clamp(38px,5.5vw,68px);line-height:1.1;margin-bottom:20px;opacity:0;animation:fadeUp .8s ease forwards .4s}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:17px;color:var(--muted);max-width:540px;margin-bottom:36px;opacity:0;animation:fadeUp .8s ease forwards .6s}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease forwards .8s}
+.hero-photo{flex-shrink:0;opacity:0;animation:fadeUp .8s ease forwards 1s}
+.hero-photo img{width:280px;height:280px;object-fit:cover;border-radius:50%;border:4px solid var(--accent-light);box-shadow:0 20px 60px rgba(45,90,61,.15)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;transition:all .3s;cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#1E3D29;transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,90,61,.25)}
+.btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+section{padding:90px 40px}
+.container{max-width:1200px;margin:0 auto}
+.section-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.section-title{font-family:var(--serif);font-size:clamp(26px,3.5vw,38px);margin-bottom:44px;line-height:1.2}
+.impact-banner{background:var(--accent);padding:60px 40px;text-align:center}
+.impact-banner .container{max-width:1200px;margin:0 auto}
+.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:32px}
+.impact-item .impact-num{font-family:var(--serif);font-size:clamp(28px,4vw,42px);color:#fff;margin-bottom:4px}
+.impact-item .impact-label{font-size:13px;color:rgba(255,255,255,.7)}
+#about{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.about-text p{color:var(--muted);margin-bottom:18px;font-size:15px}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+.stat{background:var(--bg);padding:22px;border-radius:12px;border:1px solid var(--border)}
+.stat-number{font-family:var(--serif);font-size:30px;color:var(--accent);margin-bottom:4px}
+.stat-label{font-size:12px;color:var(--muted);font-weight:500}
+.timeline{position:relative}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:var(--border)}
+.timeline-item{padding-left:36px;margin-bottom:44px;position:relative}
+.timeline-item::before{content:'';position:absolute;left:-5px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.timeline-role{font-weight:600;font-size:17px;margin-bottom:2px}
+.timeline-company{color:var(--accent);font-weight:500;font-size:14px}
+.timeline-date{font-size:12px;color:var(--muted);margin-bottom:10px}
+.timeline-desc{color:var(--muted);font-size:14px}
+.timeline-desc li{margin-bottom:5px;list-style:none;padding-left:16px;position:relative}
+.timeline-desc li::before{content:'\2014';position:absolute;left:0;color:var(--accent-warm)}
+#projects{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.project-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .4s;position:relative;overflow:hidden}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.08);border-color:var(--accent)}
+.project-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-warm));opacity:0;transition:opacity .3s}
+.project-card:hover::after{opacity:1}
+.project-icon{width:44px;height:44px;background:var(--accent-light);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px}
+.project-title{font-weight:600;font-size:17px;margin-bottom:8px}
+.project-desc{font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.7}
+.project-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;background:var(--accent-light);color:var(--accent)}
+.project-results{margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:13px;color:var(--accent);font-weight:600}
+.project-link{display:inline-block;margin-top:10px;font-size:12px;color:var(--accent);text-decoration:underline}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.skill-group{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px}
+.skill-group-title{font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:14px}
+.skill-items{display:flex;flex-wrap:wrap;gap:7px}
+.skill-tag{font-size:12px;padding:5px 12px;border-radius:8px;background:var(--bg);border:1px solid var(--border);color:var(--text)}
+#contact{background:var(--accent);color:#fff;text-align:center}
+#contact .section-label{color:var(--accent-light)}
+#contact .section-title{color:#fff}
+#contact p{color:rgba(255,255,255,.7);max-width:500px;margin:0 auto 36px;font-size:15px}
+.contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.contact-link{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:500;font-size:14px;transition:all .3s;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.contact-link:hover{background:#fff;color:var(--accent)}
+footer{padding:20px 40px;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{opacity:0;transform:translateY(20px);transition:all .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){nav{padding:0 20px}nav .links{gap:16px}nav .links a{font-size:11px}section{padding:60px 20px}.hero{padding:100px 20px 60px;flex-direction:column-reverse;text-align:center;gap:28px}.hero-photo img{width:180px;height:180px}.hero-buttons{justify-content:center}.about-grid{grid-template-columns:1fr;gap:28px}.projects-grid{grid-template-columns:1fr}.contact-links{flex-direction:column;align-items:center}.impact-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){nav .links{gap:10px}.hero-buttons{flex-direction:column}.stats-grid{grid-template-columns:1fr}.impact-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav><div class="inner"><a href="#" class="logo">PR.</a><div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-label">Available for full-time roles</div>
+    <h1>I turn marketing data into <span>business decisions.</span></h1>
+    <p>Marketing Data Analyst with 3+ years of experience in dashboards, attribution modeling, SEO, social media analytics, and automated reporting. MS in Business Analytics, UMass Boston.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">View my work &#8595;</a>
+      <a href="#contact" class="btn btn-outline">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="pooja.jpg" alt="Pooja Rajbhar" />
+  </div>
+</section>
+
+<div class="impact-banner"><div class="container"><div class="impact-grid">
+  <div class="impact-item"><div class="impact-num">$36K+</div><div class="impact-label">Annual Revenue Impact</div></div>
+  <div class="impact-item"><div class="impact-num">13+</div><div class="impact-label">Dashboards Built</div></div>
+  <div class="impact-item"><div class="impact-num">30%</div><div class="impact-label">Manual Reporting Cut</div></div>
+  <div class="impact-item"><div class="impact-num">25%</div><div class="impact-label">Qualified Leads Increased</div></div>
+  <div class="impact-item"><div class="impact-num">12%</div><div class="impact-label">Conversion Rates Lifted</div></div>
+  <div class="impact-item"><div class="impact-num">15%</div><div class="impact-label">Data Discrepancies Fixed</div></div>
+</div></div></div>
+
+<section id="about"><div class="container"><div class="about-grid">
+  <div>
+    <div class="section-label">About</div>
+    <div class="section-title">Numbers tell stories. I make sure yours tells the right one.</div>
+    <div class="about-text">
+      <p>I've spent the past three years helping companies understand what their marketing spend is actually doing. Not just reporting on it &#8212; but finding the patterns, flagging the problems, and recommending what to do differently tomorrow.</p>
+      <p>At NM Medical, I built the attribution model that connected digital spend to real patient bookings and led SEO content strategy that grew organic traffic. At GetSetHome, I automated reporting across 5 channels, managed social media pages, and built the customer segmentation that reshaped how the company thought about retention.</p>
+      <p>Currently finishing my Master's in Business Analytics at UMass Boston. I'm looking for a team where I can keep doing what I do best &#8212; making data useful.</p>
+    </div>
+  </div>
+  <div><div class="stats-grid fade-in">
+    <div class="stat"><div class="stat-number">3+</div><div class="stat-label">Years of Experience</div></div>
+    <div class="stat"><div class="stat-number">5</div><div class="stat-label">Marketing Channels Managed</div></div>
+    <div class="stat"><div class="stat-number">100K+</div><div class="stat-label">Records Processed</div></div>
+    <div class="stat"><div class="stat-number">10%</div><div class="stat-label">Customer Retention Lift</div></div>
+  </div></div>
+</div></div></section>
+
+<section id="experience"><div class="container">
+  <div class="section-label">Experience</div>
+  <div class="section-title">Where I've made an impact</div>
+  <div class="timeline">
+    <div class="timeline-item fade-in">
+      <div class="timeline-role">MS in Business Analytics (STEM)</div>
+      <div class="timeline-company">University of Massachusetts Boston</div>
+      <div class="timeline-date">August 2024 &#8212; May 2026</div>
+      <div class="timeline-desc"><ul><li>Machine Learning, Enterprise BI, Big Data Analytics, Database Management, Project &amp; Change Management</li></ul></div>
+    </div>
+    <div class="timeline-item fade-in">
+      <div class="timeline-role">Marketing Analyst</div>
+      <div class="timeline-company">NM Medical &#8212; Healthcare diagnostics, 50+ centers</div>
+      <div class="timeline-date">October 2023 &#8212; August 2024</div>
+      <div class="timeline-desc"><ul>
+        <li>Generated $3,000+ incremental monthly revenue through multi-touch attribution modeling across Google Ads, Meta, and referral channels</li>
+        <li>Engineered 5+ Power BI dashboards with SQL data pipelines tracking revenue attribution, booking conversions, and campaign pacing</li>
+        <li>Identified 40% CPL spike by diagnosing audience overlap in GA4 and GTM, lifting conversions by 15%</li>
+        <li>Led SEO content strategy and blog optimization that grew organic traffic, contributing to lead generation and reducing paid channel dependency</li>
+        <li>Coordinated with operations and finance to reconcile marketing spend data, ensuring 100% accuracy in monthly budget reports</li>
+      </ul></div>
+    </div>
+    <div class="timeline-item fade-in">
+      <div class="timeline-role">Marketing Data Analyst</div>
+      <div class="timeline-company">GetSetHome &#8212; Real estate technology platform</div>
+      <div class="timeline-date">January 2021 &#8212; September 2023</div>
+      <div class="timeline-desc"><ul>
+        <li>Increased qualified leads by 25% through funnel and cohort analysis across 5 channels (Google, Meta, referral, SEO, social)</li>
+        <li>Built 8+ automated dashboards in Power BI/Tableau, eliminating 30% of manual reporting and accelerating budget decisions by 25%</li>
+        <li>Managed social media pages across Instagram, Facebook, and LinkedIn &#8212; tracked engagement, reach, and follower growth to optimize content calendar and posting strategy</li>
+        <li>Drove SEO performance tracking and keyword analysis, monitoring organic rankings and optimizing on-page content to improve search visibility</li>
+        <li>A/B tested landing pages and emails, improving conversion rates by 12%</li>
+        <li>Implemented RFM segmentation in Python, feeding segments into HubSpot for personalized email campaigns that increased retention by 10%</li>
+      </ul></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="container">
+  <div class="section-label">Projects</div>
+  <div class="section-title">Things I've built</div>
+  <div class="projects-grid">
+    <div class="project-card fade-in">
+      <div class="project-icon">&#128202;</div>
+      <div class="project-title">Marketing Attribution &amp; ROI Optimization</div>
+      <div class="project-desc">Built a multi-touch attribution model measuring how each marketing channel contributes to conversions across the full customer journey. Automated the reporting pipeline so insights went from 3 days to same-day delivery.</div>
+      <div class="project-tags"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">GA4</span></div>
+      <div class="project-results">&#8593; 10-12% ROI improvement identified</div>
+    </div>
+    <div class="project-card fade-in">
+      <div class="project-icon">&#127919;</div>
+      <div class="project-title">Customer Segmentation Engine</div>
+      <div class="project-desc">Clustered 15,000+ customer records by RFM scores using K-means in Python. Visualized segments in Tableau, revealing that the top 20% of customers drove 58% of revenue &#8212; insight used to restructure loyalty campaigns.</div>
+      <div class="project-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">HubSpot</span><span class="tag">Tableau</span></div>
+      <div class="project-results">&#8593; 10% retention in first quarter</div>
+    </div>
+    <div class="project-card fade-in">
+      <div class="project-icon">&#128200;</div>
+      <div class="project-title">Paid Media Performance Tracker</div>
+      <div class="project-desc">Built an end-to-end dashboard consolidating Google Ads, Meta Ads, and GA4 data into a single Power BI interface using SQL and Python ETL scripts, with drill-down views tracking CTR, CPC, CPL, and ROAS by channel.</div>
+      <div class="project-tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Google Ads</span></div>
+      <div class="project-results">&#8595; 5+ hours weekly manual reporting eliminated</div>
+      <a href="https://github.com/poojaajaykumar/paid-media-performance-tracker" target="_blank" class="project-link">View on GitHub &#8594;</a>
+    </div>
+    <div class="project-card fade-in">
+      <div class="project-icon">&#128736;</div>
+      <div class="project-title">BI &amp; Analytics Platform</div>
+      <div class="project-desc">Designed an end-to-end analytics solution processing 100,000+ records from CRM, web analytics, and transaction sources. Built ETL pipelines in BigQuery into a unified data warehouse powering automated dashboards.</div>
+      <div class="project-tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">R</span><span class="tag">BigQuery</span><span class="tag">Power BI</span></div>
+      <div class="project-results">Adopted by leadership for quarterly reviews</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="container">
+  <div class="section-label">Skills</div>
+  <div class="section-title">What I work with</div>
+  <div class="skills-grid">
+    <div class="skill-group fade-in"><div class="skill-group-title">Languages &amp; Tools</div><div class="skill-items"><span class="skill-tag">SQL</span><span class="skill-tag">Python</span><span class="skill-tag">R</span><span class="skill-tag">BigQuery</span><span class="skill-tag">Excel</span><span class="skill-tag">VBA</span></div></div>
+    <div class="skill-group fade-in"><div class="skill-group-title">BI &amp; Visualization</div><div class="skill-items"><span class="skill-tag">Power BI</span><span class="skill-tag">Tableau</span><span class="skill-tag">Looker</span><span class="skill-tag">Google Analytics 4</span><span class="skill-tag">Adobe Analytics</span></div></div>
+    <div class="skill-group fade-in"><div class="skill-group-title">Marketing &amp; CRM</div><div class="skill-items"><span class="skill-tag">Google Ads</span><span class="skill-tag">Meta Ads</span><span class="skill-tag">SEO</span><span class="skill-tag">Social Media Analytics</span><span class="skill-tag">Salesforce</span><span class="skill-tag">HubSpot</span><span class="skill-tag">A/B Testing</span></div></div>
+    <div class="skill-group fade-in"><div class="skill-group-title">Methods</div><div class="skill-items"><span class="skill-tag">Attribution Modeling</span><span class="skill-tag">Cohort Analysis</span><span class="skill-tag">RFM Segmentation</span><span class="skill-tag">Regression</span><span class="skill-tag">Machine Learning</span><span class="skill-tag">Funnel Analysis</span></div></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="container">
+  <div class="section-label">Contact</div>
+  <div class="section-title">Let's connect</div>
+  <p>I'm actively looking for Marketing Analyst, Data Analyst, and Business Analyst roles. Open to remote and on-site across the U.S.</p>
+  <div class="contact-links">
+    <a href="mailto:pooja.ajaykumar90@gmail.com" class="contact-link">&#9993; pooja.ajaykumar90@gmail.com</a>
+    <a href="https://www.linkedin.com/in/poojaajay/" target="_blank" class="contact-link">in LinkedIn</a>
+    <a href="https://github.com/poojaajaykumar" target="_blank" class="contact-link">&#8962; GitHub</a>
+    <a href="tel:+18575443809" class="contact-link">&#9742; (857) 544-3809</a>
+  </div>
+</div></section>
+
+<footer>&#169; 2026 Pooja Rajbhar. Built with intention, not templates.</footer>
+
+<script>
+var observer=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.15});
+document.querySelectorAll('.fade-in').forEach(function(e){observer.observe(e)});
+document.querySelectorAll('nav a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+</script>
+</body>
+</html>
